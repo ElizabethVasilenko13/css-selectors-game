@@ -1,0 +1,339 @@
+.black {
+  color: black;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.purple {
+  color: purple;
+}
+
+.edit {
+  position: relative;
+  margin-left: 20px;
+}
+
+#highlighter {
+  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  height: 30px;
+  max-width: calc(80% - 35px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  z-index: 3;
+  font-size: 14px;
+  font-family: "Roboto", monospace;
+  color: black;
+}
+
+#highlighter::-webkit-scrollbar {
+  width: 2px;
+  height: 5px;
+  background-color: #f5f5f5;
+}
+
+#highlighter::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+#css-input {
+  color: black;
+  font-family: "Roboto", monospace;
+  white-space: nowrap;
+  outline: none;
+  display: block;
+  position: relative;
+  z-index: 4;
+  height: 20px;
+  width: calc(80% - 35px);
+  top: 10px;
+  left: 20px;
+  background-color: transparent;
+  color: transparent;
+  font-size: 14px;
+  border: none;
+  caret-color: $code-text-color;
+  text-align: left;
+  @media (max-width: 992px) {
+    font-size: 13px;
+  }
+
+  &.blink {
+    animation: blink 0.9s infinite;
+  }
+}
+
+input:focus{
+  outline: none;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: $background-color;
+  text-align: center;
+}
+
+.table-wrapper {
+  margin-top: 40px;
+  margin: 0 auto;
+  perspective: 600px;
+}
+
+.table-surface {
+  margin: 0 auto;
+  transform: rotateX(45deg);
+  max-width: 500px;
+  background-image: url('./asserts/img/water.jpg');
+  background-size: 80%;
+  transform-style: preserve-3d;
+  position: relative;
+  border-radius: 30%;
+  padding: 1rem;
+}
+
+.win {
+  padding-top: 20px;
+  font-size: 40px;
+  color: red;
+}
+
+.lake {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.editor {
+  margin: 0 auto;
+  width: 90%;
+  border: 10px $background-color-footer solid;
+  border-radius: 10px;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  &.shake {
+    animation: shake 0.1s ease-in-out 5;
+  }
+}
+
+.editor-block {
+  width: 50%;
+  background-color: #ebeaea;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+}
+
+.editor-block-html, 
+.hljs {
+  background-color: #3d3d3d;
+}
+
+.editor-block__header {
+  height: 20px;
+  position: relative;
+  color: #fff;
+  background-color: $background-color-header;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 992px) {
+    font-size: 13px;
+  }
+}
+
+.editor-body {
+  position: relative;
+  min-height: 300px;
+  font-size: 16px;
+
+  @media (max-width: 992px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 50px;
+  }
+}
+
+.code-lines {
+  font-size: 14px;
+  counter-reset: codeLines-counter;
+  position: absolute;
+  height: calc(100% - 10px);
+  color: $code-text-color;
+  text-align: right;
+  padding: 5px 4px 5px 5px;
+  width: 15px;
+  border-right: 1px solid $code-text-color;
+  overflow-y: hidden;
+
+  @media (max-width: 992px) {
+    font-size: 11px;
+  }
+
+  div {
+    counter-increment: codeLines-counter;
+    &::before {
+      content: counter(codeLines-counter) "";
+    }
+  }
+}
+
+.enter-btn {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  margin-left: 5px;
+  border: #159F9D 2px solid;
+  border-radius: 5px;
+  background-color: $background-color-aside;
+  color: #159F9D;
+
+  &:hover {
+    @include btn-hover(rgba(21,159,157,1));
+  }
+}
+
+.html { 
+  position: absolute;
+  top: -11px;
+  z-index: 0;
+}
+
+.code-lines,
+.editor-block__header {
+  z-index: 5;
+}
+
+.html-code {
+  padding-top: 5px;
+  text-align: left;
+  padding-left: 30px;
+
+  div {
+    padding-left: 10px;
+
+    &.hover pre > code > span > span {
+    color: rgb(197, 196, 196);
+    }
+  }
+}
+
+.element-hover {
+  border-radius: 50%;
+  box-shadow: 1px 5px 29px 4px rgba(255,255,255,1);
+  // position: relative;
+}
+
+div.element {
+  position: absolute;
+  top: -70px;
+  right: -36px;
+  width: 120px;
+  max-height: 50px;
+  padding: 5px;
+  background-color: #fff;
+  font-size: 12px;
+}
+
+
+lilypad,
+flower,
+frog,
+butterfly {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: appear 0.5s;
+  position: relative;
+  z-index: 4;
+}
+
+.data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: #fff;
+  color: black;
+  height: 20px;
+  border-radius: 10px;
+  width: 70px;
+}
+
+lilypad,
+flower {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    animation: elementsdAnimation 0.5s ease-in-out infinite alternate, appear 0.5s;
+  }
+}
+
+frog {
+  background-image: url('./asserts/img/frog.png');
+}
+
+butterfly, frog {
+  width: 80px;
+  height: 80px;
+
+  &.small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.active {
+    animation: frogAnimation 0.7s ease-in-out infinite alternate, appear 0.5s;
+  }
+}
+
+butterfly {
+  background-image: url('./asserts/img/butterfly.png');
+}
+
+flower {
+  width: 100px;
+  height: 100px;
+  background-image: url('./asserts/img/peony.png');
+}
+
+lilypad {
+  width: 100px;
+  height: 100px;
+  background-image: url('./asserts/img/lilypad-green.svg');
+
+  &#fancy {
+    background-image: url('./asserts/img/lilypad-fancy.svg');
+  }
+}
+
+.clean {
+  animation: removeTable .4s 1;
+  transform: translateY(-1000px);
+}

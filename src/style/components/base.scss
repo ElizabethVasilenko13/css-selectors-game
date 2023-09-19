@@ -1,0 +1,72 @@
+button,
+.help-btn {
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Righteous', cursive;
+  color: $main-text-color;
+
+  &.block {
+    pointer-events: none;
+  }
+}
+
+h1 {
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+pre,
+code,
+pre code.hljs  {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+.wrapper {
+  padding: 10px 20px;
+  overflow-x: hidden;
+}
+
+.header {
+  height: 10%;
+  background-color: $background-color-header;
+  font-weight: bold;
+}
+
+.help-btn {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid yellow;
+  color: yellow;
+  padding: 5px;
+
+  &:hover {
+    @include btn-hover(yellow);
+  }
+
+  &::before {
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+    background-size: 72%;
+    background-image: url('./asserts/img/tips.svg');
+  }
+}
+
+.content {
+  min-height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}

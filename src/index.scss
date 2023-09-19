@@ -1,0 +1,17 @@
+// abstarct
+@import './style/abstract/constant.scss';
+@import './style/abstract/mixins.scss';
+@import './style/abstract/animation.scss';
+
+// components
+@import './style/components/main.scss';
+@import './style/components/footer.scss';
+@import './style/components/base.scss';
+@import './style/components/levels.scss';
+
+
+.layout-2-col {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

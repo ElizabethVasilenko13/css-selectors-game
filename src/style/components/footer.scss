@@ -1,0 +1,39 @@
+.footer {
+  background-color: $background-color-footer;
+  height: 10%;
+}
+
+.footer-item {
+  margin: 10px 0;
+}
+
+.footer-item:last-child:hover {
+  background-color: #ffffff9d;
+}
+
+.footer-item:last-child {
+  transition: all 0.1s ease-in;
+}
+
+.footer-items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.footer-link:hover {
+  color: #a3a0a0;
+}
+
+.rs-link img{
+  width: 60px;
+}
